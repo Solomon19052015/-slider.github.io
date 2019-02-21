@@ -1,0 +1,117 @@
+
+body{
+  padding: 0;
+  margin: 0;
+}
+  .main{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+  }
+
+  .main button{
+    height: 30px;
+    width: 50px;
+    margin: 10px 0 ;
+    cursor: pointer;
+    
+    
+}
+
+
+.view{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  
+}
+
+.view .cont{
+  height: 70vh;
+  width: 100%;
+  background: rgb(105, 105, 105);
+}
+.view .cont img{
+  width: 100%;
+}
+.view .btns{
+  height: 30vh;
+  width: 100%;
+  background: rgb(44, 44, 44);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.view .btns button{
+  padding: 0;
+  margin-right: 10px;
+  transition: all 0.5s ease;
+  border: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.btnActieve{
+  background: rgb(80, 158, 115);
+}
+
+.win1,.win2, .win3, .win4{
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 70vh;
+  color: #fff;
+  transition: transform 0.5s, opacity 0.5s;
+  top: 0;
+  font-family: "Roboto";
+  font-size: 50px;
+
+}
+
+.win1_cont, .win2_cont, .win3_cont, .win4_cont{
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  
+  color: #fff;
+  transition: transform 0.5s, opacity 0.8s;
+  top: 0
+}
+
+.load{
+  transform: translateX(-110%);
+z-index: 1;
+transition: all 0s;
+  
+}
+
+.open{
+  
+  opacity: 1;
+  z-index: 10;
+  animation: openAnimation 1s cubic-bezier(0.275, 0.885, 0.32, 1.275) 0s 1 normal backwards;
+  transform-origin: center;
+  
+}
+
+@keyframes openAnimation{
+  0%{
+    transform: translateX(-110%) rotate(0deg);
+  }
+  50%{
+    transform: skewX(2deg)  rotate(5deg) ;
+  }
+  100%{
+    transform:   translateX(0%) rotate(0deg);
+  }
+}
+
+.close{
+  transform: translateX(110%);
+z-index: 1;
+opacity: 0;
+}
